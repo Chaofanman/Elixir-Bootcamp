@@ -23,7 +23,14 @@ defmodule Cards do
 	end
 
 	@doc """
-	Checks the deck if a certain card is in there, will return true, otherwise false
+	Checks the deck if it contains a certain card.
+
+	##Examples
+		iex> deck = Cards.create_deck
+		iex> Cards.contains?(deck, "Ace of Spades")
+		true 
+		iex> Cards.contains?(deck, "Sea of Turtles")
+		false
 	"""
 	def contains?(deck, card) do
 		Enum.member?(deck, card)
@@ -36,7 +43,7 @@ defmodule Cards do
 
 	## Examples
 		iex> deck = Cards.create_deck
-		iex> {hand, deck} = Cards.deal(deck, 1)
+		iex> {hand, _deck} = Cards.deal(deck, 1)
 		iex> hand
 		["Ace of Spades"] 
 	"""
